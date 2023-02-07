@@ -25,7 +25,7 @@ def main():
     x = data.iloc[:, :-1].to_numpy()
     y = data.iloc[:, -1].to_numpy()
     x = (x-np.min(x))/(np.max(x)-np.min(x))
-    theta, error = gradient_descent(x, y, .001, 100)
+    theta, error = gradient_descent(x, y, .001, 10000)
     print(error)
     print(theta)
 

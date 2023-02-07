@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 # x is the features matrix, y is the outputs, alpha is the step and n is the number of iterations to run
 def gradient_descent(x, y, alpha, n):
@@ -28,6 +28,10 @@ def main():
     theta, error = gradient_descent(x, y, .001, 10000)
     print(error)
     print(theta)
+    # graph the error
+    x_coordinate = [1000 * i for i in range(len(error))]
+    plt.plot(x_coordinate, error)
+    plt.show()
 
 
 if __name__ == '__main__':
